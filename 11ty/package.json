@@ -1,0 +1,21 @@
+{
+  "name": "frontlib",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "eleventy --serve",
+    "11ty": "eleventy",
+    "pack": "gulp build",
+    "build": "npm run 11ty && npm run pack",
+    "deploy": ""
+  },
+  "author": "Max Soltin",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.0",
+    "highlight.js": "^11.4.0",
+    "markdown-it": "^12.3.2"
+  }
+}

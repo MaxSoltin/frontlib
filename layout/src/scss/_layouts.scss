@@ -1,0 +1,47 @@
+@import 'vars';
+//Кастомные гриды
+
+//Глобальные лейауты
+
+.header {
+	// Глобальные стили для хедера
+	flex: 0 1 auto;
+	padding: 20px 0;
+	background-color: #333;
+	color: #fff;
+	&__wrapper {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__link{
+		a{
+			color: #fff;
+		}
+	}
+}
+
+.primaryNav {
+	display: block;
+	// Глобальные стили для основной навигации
+}
+
+.mainContent {
+	// Глобальные стили для основного контента
+	padding: $gutter 0;
+	flex: 1 1 auto;
+}
+
+.sideBar {
+	display: block;
+	// Глобальные стили для сайдбара
+}
+
+.footer {
+	// Глобальные стили для футера
+	flex: 0 1 auto;
+	padding: 30px 0;
+	border: 0;
+	border-top: 1px solid #eee;
+}

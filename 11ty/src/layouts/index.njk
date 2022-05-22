@@ -1,0 +1,44 @@
+{% include "header.njk" %}
+	<main class="mainContent">
+		<div class="container">
+			<div class="row">
+				<div class="col-3">
+					{% include "aside.njk" %}
+				</div>
+				<div class="col-9">
+					<article class="article">
+						<h2 class="heading heading-2">Text Fields</h2>
+						<hr>
+						<h3 class="heading heading-3">Пример кода</h3>
+						<p class="paragraph">
+							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias optio culpa laborum quod dolor nesciunt porro delectus aliquid itaque saepe! Mollitia officia nesciunt quas distinctio, dolores, magni fuga molestiae, rem aliquid temporibus sequi deleniti maiores. Est dolorem maiores dignissimos, maxime, facere odio quia corrupti, sit nulla modi dicta similique dolor?
+						</p>
+						<div class="tabBlock">
+							<div class="tabBlock__tabs">
+								<ul class="tabBlock__list">
+									<li class="tabBlock__tabItem">
+										<button class="tabBlock__tabBtn active" data-indextab="iTab_1">HTML</button>
+									</li>
+									<li class="tabBlock__tabItem">
+										<button class="tabBlock__tabBtn" data-indextab="iTab_2">SCSS</button>
+									</li>
+								</ul>
+							</div>
+							<div class="tabBlock__wrapper">
+								<div class="tabBlock__content" id="iTab_1">
+									111
+								</div>
+								<div class="tabBlock__content" id="iTab_2">
+									222
+								</div>
+							</div>
+						</div>
+						
+						<hr>
+						<button class="btn">Демо</button>
+					</article>
+				</div>
+			</div>
+		</div>
+	</main>
+{% include "footer.njk" %}

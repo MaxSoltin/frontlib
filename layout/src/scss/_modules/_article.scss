@@ -1,0 +1,270 @@
+@import '../vars';
+@import '../_mixins/mixins';
+@import '../extensions';
+
+.article {
+
+	font-family: $mainFont, sans-serif;
+	font-size: 1em;
+	background-color: #fff;
+	padding: 20px;
+
+	&__title{
+		margin: 0!important;
+	}
+
+	hr {
+		margin-top: 20px;
+		margin-bottom: 20px;
+		border: 0;
+		border-top: 1px solid #eee;
+	}
+
+//---Headers
+
+	h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+		margin: 0;
+		padding: 0;
+		font-family: inherit;
+		font-weight: 500;
+		line-height: 1.1;
+		color: inherit;
+	}
+	h1, .h1, h2, .h2, h3, .h3 {
+		margin-top: 20px;
+		margin-bottom: 10px;
+	}
+	h4, .h4, h5, .h5, h6, .h6{
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	h1, .h1 {
+		font-size: 36px;
+	}
+	h2, .h2 {
+		font-size: 30px;
+	}
+	h3, .h3 {
+		font-size: 24px;
+	}
+	h4, .h4 {
+		font-size: 18px;
+	}
+	h5, .h5 {
+		font-size: 14px;
+	}
+	h6, .h6 {
+		font-size: 12px;
+	}
+
+//---Text
+
+	p {
+		font-weight: normal;
+		line-height: 130%;
+		margin: 0 0 10px;
+	}
+	b, strong {
+		font-weight: bold;
+	}
+	em {
+		font-style: italic;
+	}
+	s {
+		text-decoration: line-through;
+	}
+
+	blockquote {
+		display: block;
+		margin-block-start: 1em;
+		margin-block-end: 1em;
+		margin-inline-start: 40px;
+		margin-inline-end: 40px;
+		padding: 10px 20px;
+		margin: 0 0 20px;
+		font-size: 17.5px;
+		border-left: 5px solid #eee;
+	}
+
+	code:not(.code code) {
+		padding: 2px 4px;
+		font-size: 90%;
+		color: #c7254e;
+		background-color: #f9f2f4;
+		border-radius: 4px;
+	}
+
+	pre:not(.code pre){
+		color: #333;
+		word-break: break-all;
+		word-wrap: break-word;
+		border-radius: 4px;
+		white-space: pre-wrap;
+		border: 1px solid #ccc;
+		background-color: #eee;
+	}
+
+	pre code:not(.code code){
+		display: block;
+		white-space: pre-wrap;
+		padding: 0;
+	}
+
+	sub, sup {
+		position: relative;
+		font-size: 75%;
+		line-height: 0;
+		vertical-align: baseline;
+	}
+	sup {
+		top: -.5em;
+	}
+
+	sub {
+		bottom: -.25em;
+	}
+
+	ins {
+		text-decoration: underline;
+	}
+
+	mark, .mark {
+		padding: .2em;
+		background-color: #fcf8e3;
+	}
+
+	mark {
+		color: #000;
+		background: #ff0;
+	}
+
+	abbr[title] {
+		text-decoration: underline dotted;
+	}
+	abbr[title], abbr[data-original-title]{
+		cursor: help;
+		border-bottom: 1px dotted #777;
+	}
+
+//---Lists
+
+	ul {
+		display: block;
+		list-style-type: disc;
+		margin-block-start: 1em;
+		margin-block-end: 1em;
+		margin-inline-start: 0px;
+		margin-inline-end: 0px;
+		padding-inline-start: 20px;
+	}
+	ol {
+		display: block;
+		list-style-type: decimal;
+		margin-block-start: 1em;
+		margin-block-end: 1em;
+		margin-inline-start: 0px;
+		margin-inline-end: 0px;
+		padding-inline-start: 20px;
+	}
+	ul, ol {
+		margin-top: 0;
+		margin-bottom: 10px;
+		&::marker {
+			unicode-bidi: isolate;
+			font-variant-numeric: tabular-nums;
+			text-transform: none;
+			text-indent: 0px !important;
+			text-align: start !important;
+			text-align-last: start !important;
+		}
+	}
+	li {
+		display: list-item;
+		text-align: -webkit-match-parent;
+	}
+	ul ul {
+		list-style-type: circle;
+	}
+	ul ul ul {
+		list-style-type: square;
+	}
+	ul ul, ol ul, ul ol, ol ol {
+		margin-bottom: 0;
+	}
+
+	dl {
+		display: block;
+		margin-block-start: 1em;
+		margin-block-end: 1em;
+		margin-inline-start: 0px;
+		margin-inline-end: 0px;
+	}
+	dl {
+		margin-top: 0;
+		margin-bottom: 20px;
+	}
+	dt, dd {
+		line-height: 1.42857143;
+	}
+	dt {
+		display: block;
+		font-weight: bold;
+	}
+	dd {
+		display: block;
+		margin-inline-start: 40px;
+		margin-left: 0;
+	}
+
+//---Tables
+
+	table {
+		display: table;
+		border-collapse: collapse;
+		box-sizing: border-box;
+		text-indent: initial;
+		border-spacing: 0;
+		border-color: grey;
+		background-color: transparent;
+		width: 100%;
+		max-width: 100%;
+		margin-bottom: 20px;
+		border: 1px solid #eee;
+	}
+	tr {
+		display: table-row;
+		vertical-align: inherit;
+		border-color: inherit;
+	}
+	tr:nth-child(2n + 1){
+		background-color: #eee;
+	}
+	th{
+		font-weight: bold;
+		text-align: center;
+		background-color: rgb(214, 214, 214);
+	}
+
+	td, th{
+		display: table-cell;
+		padding: 10px 20px;
+		border: 1px solid #ccc;
+	}
+	
+
+	//---Links
+
+	a {
+		color: #428bca;
+		text-decoration: none;
+		background: transparent;
+		cursor: pointer;
+	}
+
+	//---Images
+
+	img {
+		max-width: 35%;
+	}
+
+}

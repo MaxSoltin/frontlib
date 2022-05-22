@@ -1,0 +1,40 @@
+@import '../vars';
+@import '../_mixins/mixins';
+@import '../extensions';
+
+.mainSidebar{
+  background-color: #e5e5e5;
+  padding: 20px 30px;
+	position: sticky;
+	top: 30px;
+	margin-bottom: 30px;
+  &__title{
+    font-family: $mainFont, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+  }
+  &__item{
+    display: block;
+    &:not(:last-child){
+      margin-bottom: 15px;
+    }
+    &::before{
+      opacity: .3;
+      display: inline-block;
+      margin-right: 10px;
+      content: '# ';
+    }
+  }
+  &__link{
+		padding: 15px 0;
+    color: #333;
+    text-decoration: underline;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}

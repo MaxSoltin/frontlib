@@ -1,0 +1,16 @@
+@import '../vars';
+@import '../_mixins/mixins';
+@import '../extensions';
+
+.btn{
+  background-color: #333;
+  color: #fff;
+  padding: 10px 30px;
+  cursor: pointer;
+  border: 2px solid #333;
+  transition: all .2s ease-in;
+  &:hover{
+    background-color: #fff;
+    color: #333;
+  }
+}

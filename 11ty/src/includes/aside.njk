@@ -1,0 +1,12 @@
+<aside class="mainSidebar">
+	<nav>
+		<h3 class="mainSidebar__title">Компоненты:</h3>
+		<ul class="mainSidebar__list">
+			{% for post in collections.single %}
+				<li class="mainSidebar__item">
+					<a href="{{post.url}}" class="mainSidebar__link">{{post.data.title}}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</nav>
+</aside>
