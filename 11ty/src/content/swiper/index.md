@@ -121,9 +121,90 @@ pagination: {
 
 ### Progress Pagination
 
+<br/>
+
+#### Опция в swiper
+
 ```JS
 
+pagination: {
+	el: '.mainSlider__navList',
+	renderBullet: function (index, className) {
+		return `<li class="${className} mainSlider__navItem">
+							<div aria-label="Перейти к ${index + 1} слайду" class="mainSlider__progress"></div>
+						</li>`
+	},
+	clickable: true,
+},
+on: {
+	init: function () {
+		$('.mainSlider__progress').animate({ width: '100%' }, autoplayDelay)
+	},
+},
 
+```
+
+#### Метод в JS
+
+``` JS
+
+swiper.on('realIndexChange', function () {
+	$('.mainSlider__progress').animate().stop()
+	$('.mainSlider__progress').css({ width: '0' })
+	$('.mainSlider__progress').animate({ width: '100%' }, speed + autoplayDelay)
+	setTimeout(() => {
+		swiper.autoplay.start()
+	}, autoplayDelay)
+})
+
+```
+
+#### Стилизация прогрессбара
+
+``` SCSS
+
+&__navItem {
+	opacity: 1;
+	height: 100%;
+	flex: 1 1 100%;
+	background: rgba(#fff, 0.2);
+	border-radius: 0;
+	position: relative;
+	cursor: pointer;
+	transition: all 0.2s;
+	&:hover {
+		transform: scaleY(1.4);
+	}
+	&:focus {
+		box-shadow: none;
+	}
+	&:not(:last-child) {
+		margin-right: 10px;
+	}
+	&::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: -2px;
+		height: 8px;
+		width: 100%;
+	}
+}
+&__progress {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	border-radius: 0;
+	background-color: #fff;
+}
+.swiper-pagination-bullet &__progress{
+	opacity: 0;
+}
+.swiper-pagination-bullet-active &__progress{
+	opacity: 1;
+}
 
 ```
 
