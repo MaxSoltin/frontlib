@@ -101,3 +101,28 @@ $(function () {
 
 
 ```
+
+### Responsive
+
+``` SCSS
+
+.parallax {
+	@include media-sm {
+		height: auto!important;
+	}
+	&__img {
+		@include media-sm {
+			top: 0;
+			height: 100%!important;
+			transform: translate(0, 0)!important;
+		}
+	}
+	&__content {
+		@include media-sm {
+			position: relative;
+			padding: 60px 0;
+		}
+	}
+}
+
+```
